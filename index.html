@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gujarat Wireless PSI — Exam Prep Roadmap</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0e1a;
+    --bg2: #0f1525;
+    --card: #141b2d;
+    --card2: #1a2338;
+    --accent: #f59e0b;
+    --accent2: #3b82f6;
+    --accent3: #10b981;
+    --accent4: #ef4444;
+    --accent5: #8b5cf6;
+    --text: #e2e8f0;
+    --muted: #64748b;
+    --border: #1e2d45;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, #0a0e1a 0%, #0f1a35 50%, #0a0e1a 100%);
+    padding: 60px 24px 50px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border);
+  }
+  .hero::before {
+    content:'';
+    position:absolute;
+    top:-100px; left:50%;
+    transform:translateX(-50%);
+    width:600px; height:600px;
+    background: radial-gradient(circle, rgba(245,158,11,0.08) 0%, transparent 70%);
+    pointer-events:none;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(245,158,11,0.12);
+    border: 1px solid rgba(245,158,11,0.3);
+    color: var(--accent);
+    font-family: 'Syne', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 100px;
+    margin-bottom: 24px;
+  }
+  .hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(28px, 6vw, 52px);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    letter-spacing: -1px;
+  }
+  .hero h1 span { color: var(--accent); }
+  .hero p {
+    font-size: 16px;
+    color: #94a3b8;
+    max-width: 560px;
+    margin: 0 auto 36px;
+  }
+  .countdown-bar {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .count-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 24px;
+    text-align: center;
+    min-width: 90px;
+  }
+  .count-box .num {
+    font-family: 'Syne', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1;
+  }
+  .count-box .lbl {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  /* NAV */
+  .nav {
+    position: sticky;
+    top: 0;
+    background: rgba(10,14,26,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    z-index: 100;
+    padding: 0 24px;
+    display: flex;
+    gap: 4px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .nav::-webkit-scrollbar { display:none; }
+  .nav-btn {
+    background: none;
+    border: none;
+    color: var(--muted);
+    font-family: 'Syne', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 16px 16px;
+    cursor: pointer;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+    letter-spacing: 0.5px;
+  }
+  .nav-btn:hover, .nav-btn.active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+
+  /* SECTIONS */
+  .section { padding: 48px 24px; max-width: 960px; margin: 0 auto; }
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .section-h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(22px, 4vw, 32px);
+    font-weight: 800;
+    margin-bottom: 32px;
+    letter-spacing: -0.5px;
+  }
+
+  /* CARDS */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 16px;
+    transition: border-color 0.2s;
+  }
+  .card:hover { border-color: rgba(245,158,11,0.25); }
+  .card-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  /* GRID */
+  .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+
+  /* PHASE TIMELINE */
+  .phase {
+    position: relative;
+    padding-left: 44px;
+    margin-bottom: 32px;
+  }
+  .phase::before {
+    content: '';
+    position: absolute;
+    left: 16px; top: 36px;
+    width: 2px;
+    height: calc(100% + 8px);
+    background: var(--border);
+  }
+  .phase:last-child::before { display: none; }
+  .phase-dot {
+    position: absolute;
+    left: 8px; top: 8px;
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    border: 2px solid;
+    background: var(--bg);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 8px; font-weight: 800;
+  }
+  .phase-header {
+    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+    margin-bottom: 12px;
+  }
+  .phase-tag {
+    font-family: 'Syne', sans-serif;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 3px 10px; border-radius: 100px;
+  }
+  .phase-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 18px; font-weight: 800;
+  }
+  .phase-date { font-size: 13px; color: var(--muted); }
+
+  /* DAILY SCHEDULE */
+  .schedule-row {
+    display: flex;
+    align-items: stretch;
+    gap: 16px;
+    margin-bottom: 8px;
+  }
+  .schedule-time {
+    font-family: 'Syne', sans-serif;
+    font-size: 12px; font-weight: 700;
+    color: var(--muted);
+    min-width: 100px;
+    padding-top: 3px;
+    letter-spacing: 0.5px;
+  }
+  .schedule-block {
+    flex: 1;
+    border-radius: 10px;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  .block-study { background: rgba(245,158,11,0.12); border-left: 3px solid var(--accent); }
+  .block-fixed { background: rgba(100,116,139,0.1); border-left: 3px solid var(--muted); }
+  .block-new   { background: rgba(59,130,246,0.12); border-left: 3px solid var(--accent2); }
+  .block-revision { background: rgba(16,185,129,0.12); border-left: 3px solid var(--accent3); }
+
+  /* SYLLABUS TOPICS */
+  .topic-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+  .topic-header {
+    display: flex; align-items: center; gap: 14px;
+    padding: 18px 20px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .topic-header:hover { background: var(--card2); }
+  .topic-icon {
+    width: 36px; height: 36px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; flex-shrink: 0;
+  }
+  .topic-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 15px; font-weight: 700; flex: 1;
+  }
+  .topic-marks {
+    font-family: 'Syne', sans-serif;
+    font-size: 13px; font-weight: 700;
+    color: var(--accent);
+    background: rgba(245,158,11,0.1);
+    padding: 3px 10px; border-radius: 100px;
+  }
+  .topic-chevron { color: var(--muted); font-size: 12px; transition: transform 0.3s; }
+  .topic-body {
+    display: none;
+    padding: 0 20px 20px;
+    border-top: 1px solid var(--border);
+  }
+  .topic-body.open { display: block; }
+  .topic-body h4 {
+    font-family: 'Syne', sans-serif;
+    font-size: 12px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--accent); margin: 16px 0 8px;
+  }
+  .topic-body p, .topic-body li { font-size: 14px; color: #94a3b8; }
+  .topic-body ul { padding-left: 18px; }
+  .topic-body li { margin-bottom: 4px; }
+  .formula-box {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-family: monospace;
+    font-size: 13px;
+    color: var(--accent3);
+    margin: 8px 0;
+  }
+  .mcq-tip {
+    background: rgba(59,130,246,0.08);
+    border: 1px solid rgba(59,130,246,0.2);
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 13px;
+    color: #93c5fd;
+    margin-top: 10px;
+  }
+  .mcq-tip strong { color: var(--accent2); }
+
+  /* TRICKS */
+  .trick-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 12px;
+  }
+  .trick-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 15px; font-weight: 700;
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 10px;
+  }
+  .trick-badge {
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 2px 8px; border-radius: 100px;
+    background: rgba(139,92,246,0.15);
+    color: #c4b5fd;
+    border: 1px solid rgba(139,92,246,0.25);
+  }
+  .example-box {
+    background: var(--bg);
+    border-radius: 10px;
+    padding: 14px;
+    margin-top: 10px;
+    font-size: 13px;
+    border-left: 3px solid var(--accent5);
+  }
+  .example-box .q { color: #e2e8f0; font-weight: 500; margin-bottom: 6px; }
+  .example-box .a { color: var(--accent3); }
+
+  /* RESOURCES */
+  .resource-item {
+    display: flex; align-items: center; gap: 14px;
+    padding: 14px 18px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 8px;
+    transition: border-color 0.2s;
+  }
+  .resource-item:hover { border-color: rgba(245,158,11,0.3); }
+  .resource-icon {
+    width: 38px; height: 38px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; flex-shrink: 0;
+  }
+  .resource-info .name { font-size: 14px; font-weight: 500; }
+  .resource-info .desc { font-size: 12px; color: var(--muted); }
+  .resource-tag {
+    margin-left: auto;
+    font-size: 10px; font-weight: 700; letter-spacing: 1px;
+    text-transform: uppercase; padding: 3px 8px; border-radius: 6px;
+  }
+
+  /* TIPS */
+  .tip-item {
+    display: flex; gap: 14px; margin-bottom: 16px;
+    align-items: flex-start;
+  }
+  .tip-num {
+    width: 28px; height: 28px;
+    border-radius: 8px;
+    background: var(--accent);
+    color: var(--bg);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Syne', sans-serif;
+    font-size: 13px; font-weight: 800;
+    flex-shrink: 0; margin-top: 2px;
+  }
+  .tip-text { font-size: 14px; color: #94a3b8; }
+  .tip-text strong { color: var(--text); font-weight: 500; }
+
+  /* WEEK TABLE */
+  .week-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .week-table th {
+    font-family: 'Syne', sans-serif;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--muted);
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+  }
+  .week-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(30,45,69,0.5);
+    color: #94a3b8;
+    vertical-align: top;
+  }
+  .week-table tr:hover td { background: var(--card2); }
+  .week-table .wk {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700; color: var(--accent);
+    white-space: nowrap;
+  }
+  .week-table .dates { color: var(--muted); font-size: 11px; }
+
+  /* EXAM INFO */
+  .exam-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 28px; }
+  .exam-stat {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px;
+    text-align: center;
+  }
+  .exam-stat .val {
+    font-family: 'Syne', sans-serif;
+    font-size: 28px; font-weight: 800;
+    color: var(--accent); line-height: 1;
+  }
+  .exam-stat .key { font-size: 12px; color: var(--muted); margin-top: 6px; letter-spacing: 1px; }
+
+  /* PROGRESS TRACKER */
+  .progress-bar-wrap { margin-bottom: 12px; }
+  .progress-label { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 6px; }
+  .progress-label .subject { color: var(--text); font-weight: 500; }
+  .progress-label .pct { color: var(--muted); }
+  .progress-bg { height: 6px; background: var(--border); border-radius: 100px; overflow: hidden; }
+  .progress-fill { height: 100%; border-radius: 100px; }
+
+  /* TABS */
+  .tab-nav { display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; }
+  .tab-btn {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--muted);
+    font-family: 'Syne', sans-serif;
+    font-size: 12px; font-weight: 700;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 0.5px;
+  }
+  .tab-btn.active, .tab-btn:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--bg);
+  }
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  /* HIGHLIGHT */
+  .highlight { color: var(--accent); font-weight: 500; }
+  .highlight2 { color: var(--accent2); font-weight: 500; }
+  .highlight3 { color: var(--accent3); font-weight: 500; }
+
+  /* FOOTER */
+  footer {
+    background: var(--card);
+    border-top: 1px solid var(--border);
+    text-align: center;
+    padding: 32px;
+    font-size: 13px; color: var(--muted);
+  }
+  footer strong { color: var(--accent); }
+
+  /* ANIMATIONS */
+  @keyframes fadeInUp {
+    from { opacity:0; transform:translateY(20px); }
+    to { opacity:1; transform:translateY(0); }
+  }
+  .hero > * { animation: fadeInUp 0.6s ease both; }
+  .hero > *:nth-child(2) { animation-delay: 0.1s; }
+  .hero > *:nth-child(3) { animation-delay: 0.2s; }
+  .hero > *:nth-child(4) { animation-delay: 0.3s; }
+
+  /* SCROLL INDICATOR */
+  .scroll-hint { text-align:center; padding: 12px; font-size:12px; color:var(--muted); letter-spacing:2px; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">🎯 Gujarat PSI Wireless & Technical Operator</div>
+  <h1>Your <span>Zero-to-Exam</span><br>Preparation Roadmap</h1>
+  <p>45 days. Full syllabus. MCQ-focused strategy. Built around your daily schedule.</p>
+  <div class="countdown-bar">
+    <div class="count-box"><div class="num">45</div><div class="lbl">Days Left</div></div>
+    <div class="count-box"><div class="num">200</div><div class="lbl">Total MCQs</div></div>
+    <div class="count-box"><div class="num">40%</div><div class="lbl">Min Qualify</div></div>
+    <div class="count-box"><div class="num">7<span style="font-size:18px"> June</span></div><div class="lbl">Exam Date</div></div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <button class="nav-btn active" onclick="showSection('plan',this)">📅 Study Plan</button>
+  <button class="nav-btn" onclick="showSection('syllabus',this)">📚 Syllabus</button>
+  <button class="nav-btn" onclick="showSection('tricks',this)">⚡ Math Tricks</button>
+  <button class="nav-btn" onclick="showSection('resources',this)">🔗 Resources</button>
+  <button class="nav-btn" onclick="showSection('strategy',this)">🧠 Strategy</button>
+</nav>
+
+<!-- ===================== SECTION: PLAN ===================== -->
+<div id="plan" class="section">
+  <div class="section-title">Section 01</div>
+  <h2 class="section-h2">Your Daily Study Schedule</h2>
+
+  <div class="grid-2" style="margin-bottom:32px">
+    <div class="card">
+      <div class="card-title">🌅 Before Office (9:00–10:00 PM slot is PRIMARY)</div>
+      <p style="font-size:14px;color:#94a3b8">Your best mental bandwidth is the <span class="highlight">9 PM–11 PM window</span>. This is your golden study zone. No compromises.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">⏰ Key Change: Morning Use</div>
+      <p style="font-size:14px;color:#94a3b8">During your <span class="highlight">walk (7–8:15 AM)</span> listen to YouTube explanations (earphones). <span class="highlight">Swimming</span> is mental break — no change needed.</p>
+    </div>
+  </div>
+
+  <h3 style="font-family:'Syne',sans-serif;font-size:18px;font-weight:700;margin-bottom:20px;">📆 Optimized Daily Routine</h3>
+
+  <div class="card" style="margin-bottom:32px">
+    <div class="schedule-row">
+      <div class="schedule-time">6:30 AM</div>
+      <div class="schedule-block block-fixed">Wake up + freshen up</div>
+    </div>
+    <div class="schedule-row">
+      <div class="schedule-time">7:00–8:15 AM</div>
+      <div class="schedule-block block-new">🎧 Walk + Listen to topic explanations on YouTube (earphones). Passive learning. No pressure.</div>
+    </div>
+    <div class="schedule-row">
+      <div class="schedule-time">9:00–10:00 AM</div>
+      <div class="schedule-block block-fixed">Swimming (mental reset — keep this free)</div>
+    </div>
+    <div class="schedule-row">
+      <div class="schedule-time">10:00 AM–8 PM</div>
+      <div class="schedule-block block-fixed">Office hours</div>
+    </div>
+    <div class="schedule-row">
+      <div class="schedule-time">8:00–9:00 PM</div>
+      <div class="schedule-block block-fixed">Gym + Dinner</div>
+    </div>
+    <div class="schedule-row">
+      <div class="schedule-time">9:15–9:30 PM</div>
+      <div class="schedule-block block-revision">📖 Quick 15-min review of yesterday's notes (flashcard style)</div>
+    </div>
+    <div class="schedule-row">
+      <div class="schedule-time">9:30–11:00 PM</div>
+      <div class="schedule-block block-study">🧠 MAIN STUDY — 90 minutes of focused learning (new topic + MCQ practice)</div>
+    </div>
+    <div class="schedule-row">
+      <div class="schedule-time">11:00–11:15 PM</div>
+      <div class="schedule-block block-revision">📝 Write 5 key points in a notebook. Tomorrow you'll thank yourself.</div>
+    </div>
+    <div class="schedule-row">
+      <div class="schedule-time">11:15 PM</div>
+      <div class="schedule-block block-fixed">Sleep. 7 hours minimum. Sleep = memory consolidation.</div>
+    </div>
+  </div>
+
+  <h3 style="font-family:'Syne',sans-serif;font-size:18px;font-weight:700;margin-bottom:20px;">🗓️ 6-Week Master Plan (April 23 → June 7)</h3>
+
+  <div style="overflow-x:auto">
+  <table class="week-table">
+    <thead>
+      <tr>
+        <th>Week</th>
+        <th>Dates</th>
+        <th>Focus Area</th>
+        <th>Topics</th>
+        <th>Weekend Task</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><div class="wk">Week 1</div></td>
+        <td><div class="dates">Apr 23–29</div></td>
+        <td><span style="color:#f59e0b">📐 Foundations</span></td>
+        <td>Electronics basics: Semiconductors, Diodes, Transistors. Reasoning basics.</td>
+        <td>20 MCQs on Electronics basics. Identify weak spots.</td>
+      </tr>
+      <tr>
+        <td><div class="wk">Week 2</div></td>
+        <td><div class="dates">Apr 30–May 6</div></td>
+        <td><span style="color:#3b82f6">⚡ Electronics Deep</span></td>
+        <td>Amplifiers, Power Supply, Op-Amps, Oscillators. Quantitative Aptitude (Time & Work).</td>
+        <td>30 MCQs mixed Electronics. 10 Aptitude problems.</td>
+      </tr>
+      <tr>
+        <td><div class="wk">Week 3</div></td>
+        <td><div class="dates">May 7–13</div></td>
+        <td><span style="color:#10b981">📡 Digital + Comm</span></td>
+        <td>Digital Electronics, Logic Gates, Flip-flops. Communication basics: AM, FM, PM.</td>
+        <td>Full Part-B mock (30 Qs). Note all wrong answers.</td>
+      </tr>
+      <tr>
+        <td><div class="wk">Week 4</div></td>
+        <td><div class="dates">May 14–20</div></td>
+        <td><span style="color:#8b5cf6">💻 Computer Topics</span></td>
+        <td>Microprocessors (8085), Computer Networks, Network Security, Web Technology.</td>
+        <td>50-Q mixed mock. Time yourself: 30 minutes max.</td>
+      </tr>
+      <tr>
+        <td><div class="wk">Week 5</div></td>
+        <td><div class="dates">May 21–27</div></td>
+        <td><span style="color:#ef4444">🔁 Revision Round 1</span></td>
+        <td>Revise all Electronics + Comm topics. Part A: Constitution, Current Affairs, Reasoning.</td>
+        <td>Full 100-Q mock (both Parts). Score yourself honestly.</td>
+      </tr>
+      <tr>
+        <td><div class="wk">Week 6</div></td>
+        <td><div class="dates">May 28–Jun 3</div></td>
+        <td><span style="color:#f59e0b">🎯 Final Sprint</span></td>
+        <td>Weak topics only. Focus on Communication Applications + Microwave + Fibre Optics.</td>
+        <td>2 full 200-Q mock tests. Analysis + corrections.</td>
+      </tr>
+      <tr>
+        <td><div class="wk">Jun 4–6</div></td>
+        <td><div class="dates">3 days before</div></td>
+        <td><span style="color:#10b981">✅ Light Revision</span></td>
+        <td>Only formulas, key definitions, shortcut tricks. NO new topics.</td>
+        <td>Rest. Sleep early. Review notes only.</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div style="margin-top:32px">
+  <h3 style="font-family:'Syne',sans-serif;font-size:18px;font-weight:700;margin-bottom:20px;">📊 Syllabus Weight Allocation</h3>
+  <div class="card">
+    <div class="progress-bar-wrap">
+      <div class="progress-label"><span class="subject">Electronics (Part B — Core)</span><span class="pct">35%</span></div>
+      <div class="progress-bg"><div class="progress-fill" style="width:35%;background:var(--accent)"></div></div>
+    </div>
+    <div class="progress-bar-wrap">
+      <div class="progress-label"><span class="subject">Communication Engineering</span><span class="pct">25%</span></div>
+      <div class="progress-bg"><div class="progress-fill" style="width:25%;background:var(--accent2)"></div></div>
+    </div>
+    <div class="progress-bar-wrap">
+      <div class="progress-label"><span class="subject">Computer (Networks, OS, Web)</span><span class="pct">20%</span></div>
+      <div class="progress-bg"><div class="progress-fill" style="width:20%;background:var(--accent5)"></div></div>
+    </div>
+    <div class="progress-bar-wrap">
+      <div class="progress-label"><span class="subject">Reasoning + Quantitative (Part A)</span><span class="pct">12.5%</span></div>
+      <div class="progress-bg"><div class="progress-fill" style="width:12.5%;background:var(--accent3)"></div></div>
+    </div>
+    <div class="progress-bar-wrap">
+      <div class="progress-label"><span class="subject">Constitution + Current Affairs</span><span class="pct">7.5%</span></div>
+      <div class="progress-bg"><div class="progress-fill" style="width:7.5%;background:#f472b6"></div></div>
+    </div>
+  </div>
+  </div>
+
+  <!-- Phase Timeline -->
+  <h3 style="font-family:'Syne',sans-serif;font-size:18px;font-weight:700;margin:32px 0 20px">🔄 4-Phase Preparation System</h3>
+
+  <div class="phase">
+    <div class="phase-dot" style="border-color:var(--accent);color:var(--accent)">1</div>
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(245,158,11,0.1);color:var(--accent);border:1px solid rgba(245,158,11,0.2)">Phase 1</span>
+      <span class="phase-title">Foundation Building</span>
+      <span class="phase-date">Apr 23 – May 6 (2 weeks)</span>
+    </div>
+    <div class="card">
+      <p style="font-size:14px;color:#94a3b8">Build your base. Understand concepts, not just memorize. Electronics, basic communication, reasoning. Do 20 MCQs every weekend. <span class="highlight">Goal: Be comfortable with all topic names and basic concepts.</span></p>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-dot" style="border-color:var(--accent2);color:var(--accent2)">2</div>
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(59,130,246,0.1);color:var(--accent2);border:1px solid rgba(59,130,246,0.2)">Phase 2</span>
+      <span class="phase-title">Deep Dive</span>
+      <span class="phase-date">May 7 – May 20 (2 weeks)</span>
+    </div>
+    <div class="card">
+      <p style="font-size:14px;color:#94a3b8">Go deeper. Digital electronics, communication systems, microprocessors, networking. Start timed MCQ practice. <span class="highlight2">Goal: Solve 50% of MCQs correctly in practice sets.</span></p>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-dot" style="border-color:var(--accent3);color:var(--accent3)">3</div>
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(16,185,129,0.1);color:var(--accent3);border:1px solid rgba(16,185,129,0.2)">Phase 3</span>
+      <span class="phase-title">Revision + Mock Tests</span>
+      <span class="phase-date">May 21 – May 31 (10 days)</span>
+    </div>
+    <div class="card">
+      <p style="font-size:14px;color:#94a3b8">Revise everything. Full mock tests. Identify and fix weak areas. Part A + B both. <span class="highlight3">Goal: Score 60%+ in full mock tests consistently.</span></p>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-dot" style="border-color:var(--accent5);color:var(--accent5)">4</div>
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(139,92,246,0.1);color:var(--accent5);border:1px solid rgba(139,92,246,0.2)">Phase 4</span>
+      <span class="phase-title">Final Polish</span>
+      <span class="phase-date">Jun 1 – Jun 6</span>
+    </div>
+    <div class="card">
+      <p style="font-size:14px;color:#94a3b8">Only formulas, definitions, key tricks. No new topics. 2 full mock tests. Rest well. <span style="color:var(--accent5);font-weight:500">Goal: Stay calm, confident, and exam-ready.</span></p>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== SECTION: SYLLABUS ===================== -->
+<div id="syllabus" class="section" style="display:none">
+  <div class="section-title">Section 02</div>
+  <h2 class="section-h2">Syllabus Breakdown — Topic by Topic</h2>
+
+  <div class="exam-grid">
+    <div class="exam-stat"><div class="val">200</div><div class="key">Total MCQs</div></div>
+    <div class="exam-stat"><div class="val">80</div><div class="key">Part A MCQs</div></div>
+    <div class="exam-stat"><div class="val">120</div><div class="key">Part B MCQs</div></div>
+    <div class="exam-stat"><div class="val">−0.25</div><div class="key">Wrong answer</div></div>
+    <div class="exam-stat"><div class="val">0</div><div class="key">"E" = Not Attempted</div></div>
+  </div>
+
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="showTab('elec',this)">⚡ Electronics</button>
+    <button class="tab-btn" onclick="showTab('comm',this)">📡 Communication</button>
+    <button class="tab-btn" onclick="showTab('digital',this)">💾 Digital</button>
+    <button class="tab-btn" onclick="showTab('comp',this)">💻 Computer</button>
+    <button class="tab-btn" onclick="showTab('parta',this)">📝 Part A</button>
+  </div>
+
+  <!-- ELECTRONICS TAB -->
+  <div id="elec" class="tab-content active">
+
+    <div class="topic-card">
+      <div class="topic-header" onclick="toggleTopic(this)">
+        <div class="topic-icon" style="background:rgba(245,158,11,0.1)">🔋</div>
+        <div class="topic-name">Semiconductors & Diodes</div>
+        <div class="topic-marks">High Priority</div>
+        <div class="topic-chevron">▼</div>
+      </div>
+      <div class="topic-body">
+        <h4>Simple Explanation</h4>
+        <p>A semiconductor (like Silicon) is a material that can either conduct or block electricity — unlike metals (always conduct) or rubber (never conducts). By adding impurities (doping), we create P-type and N-type materials. Join them → P-N Junction Diode.</p>
+        <h4>Real-Life Example</h4>
+        <p>The charger brick in your phone uses diodes to convert AC (from wall) to DC (for battery). This is called <strong>rectification</strong>.</p>
+        <h4>Key Formulas</h4>
+        <div class="formula-box">Diode equation: I = I₀(e^(V/VT) − 1)<br>Forward bias: V ≈ 0.7V (Silicon), 0.3V (Germanium)<br>Rectifier efficiency (full wave): η ≈ 81.2%</div>
+        <h4>Important Types</h4>
+        <ul>
+          <li><strong>Zener Diode</strong> — Used for voltage regulation (works in reverse bias)</li>
+          <li><strong>LED</strong> — Emits light (energy gap determines color)</li>
+          <li><strong>Schottky Diode</strong> — Very fast switching, low voltage drop</li>
+          <li><strong>Varactor Diode</strong> — Acts as variable capacitor (used in tuners)</li>
+        </ul>
+        <div class="mcq-tip"><strong>MCQ Approach:</strong> If question asks about "voltage regulation" → Zener. If "fast switching" → Schottky. If "light emission" → LED. Always look for the keyword clue.</div>
+      </div>
+    </div>
+
+    <div class="topic-card">
+      <div class="topic-header" onclick="toggleTopic(this)">
+        <div class="topic-icon" style="background:rgba(59,130,246,0.1)">🔌</div>
+        <div class="topic-name">Transistors & Amplifiers</div>
+        <div class="topic-marks">Very High Priority</div>
+        <div class="topic-chevron">▼</div>
+      </div>
+      <div class="topic-body">
+        <h4>Simple Explanation</h4>
+        <p>A transistor is a switch + amplifier. It has 3 terminals: Base (B), Collector (C), Emitter (E). A tiny current at the Base controls a large current at the Collector. Two types: NPN and PNP. NPN is most common.</p>
+        <h4>Real-Life Example</h4>
+        <p>Every smartphone has billions of transistors. A light dimmer switch uses transistor-like components to control brightness — small input controlling large output.</p>
+        <h4>3 Configurations</h4>
+        <ul>
+          <li><strong>Common Emitter (CE)</strong> — Highest voltage gain, 180° phase shift. Most used in amplifiers.</li>
+          <li><strong>Common Base (CB)</strong> — Best frequency response. Used in RF circuits.</li>
+          <li><strong>Common Collector (CC)</strong> — Emitter follower. Voltage gain ≈ 1. High input impedance.</li>
+        </ul>
+        <h4>Key Formulas</h4>
+        <div class="formula-box">β (current gain) = IC/IB (typically 50–200)<br>α = IC/IE = β/(β+1)<br>IC = β × IB<br>Voltage gain (CE) = −β × RC/re</div>
+        <div class="mcq-tip"><strong>MCQ Approach:</strong> "Phase shift of 180°" → Common Emitter. "No phase shift" → Common Base or Common Collector. "Impedance matching" → Common Collector. Memorize this table.</div>
+      </div>
+    </div>
+
+    <div class="topic-card">
+      <div class="topic-header" onclick="toggleTopic(this)">
+        <div class="topic-icon" style="background:rgba(16,185,129,0.1)">⚙️</div>
+        <div class="topic-name">Regulated Power Supply & Feedback</div>
+        <div class="topic-marks">Medium Priority</div>
+        <div class="topic-chevron">▼</div>
+      </div>
+      <div class="topic-body">
+        <h4>Simple Explanation</h4>
+        <p>A power supply converts 230V AC → stable DC. Steps: Transformer → Rectifier → Filter → Regulator. Feedback means taking output and feeding it back to the input. <strong>Negative feedback</strong> improves stability, reduces distortion.</p>
+        <h4>Benefits of Negative Feedback</h4>
+        <ul>
+          <li>Reduces distortion and noise</li>
+          <li>Increases bandwidth</li>
+          <li>Stabilizes gain</li>
+          <li>Changes input/output impedance</li>
+        </ul>
+        <div class="formula-box">Gain with feedback: Af = A/(1 + Aβ)<br>Bandwidth with feedback: BWf = BW × (1 + Aβ)<br>Gain-Bandwidth product = constant</div>
+        <div class="mcq-tip"><strong>MCQ Approach:</strong> If asked what negative feedback reduces → distortion + noise. What it increases → bandwidth, stability. Gain goes DOWN, bandwidth goes UP.</div>
+      </div>
+    </div>
+
+    <div class="topic-card">
+      <div class="topic-header" onclick="toggleTopic(this)">
+        <div class="topic-icon" style="background:rgba(139,92,246,0.1)">🔬</div>
+        <div class="topic-name">Op-Amps & Linear ICs</div>
+        <div class="topic-marks">High Priority</div>
+        <div class="topic-chevron">▼</div>
+      </div>
+      <div class="topic-body">
+        <h4>Simple Explanation</h4>
+        <p>Op-Amp (Operational Amplifier) is a very high-gain voltage amplifier with 2 inputs (inverting −, non-inverting +) and 1 output. Ideal op-amp has infinite gain, infinite input impedance, zero output impedance.</p>
+        <h4>Common Configurations</h4>
+        <ul>
+          <li><strong>Inverting Amplifier</strong>: Gain = −Rf/Rin (negative = phase inversion)</li>
+          <li><strong>Non-Inverting Amplifier</strong>: Gain = 1 + Rf/Rin</li>
+          <li><strong>Voltage Follower</strong>: Gain = 1 (buffer)</li>
+          <li><strong>Summing Amplifier</strong>: Adds multiple voltages</li>
+          <li><strong>Differentiator / Integrator</strong>: Uses capacitors</li>
+        </ul>
+        <div class="formula-box">Inverting: Vout = −(Rf/Rin) × Vin<br>Non-inverting: Vout = (1 + Rf/Rin) × Vin<br>CMRR = differential gain / common-mode gain (higher = better)</div>
+        <div class="mcq-tip"><strong>MCQ Approach:</strong> Op-Amp questions are formula-based. Remember: Inverting = negative gain. Non-inverting = +1 added to ratio. Virtual ground concept: both inputs are at same potential in ideal op-amp.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- COMMUNICATION TAB -->
+  <div id="comm" class="tab-content">
+
+    <div class="topic-card">
+      <div class="topic-header" onclick="toggleTopic(this)">
+        <div class="topic-icon" style="background:rgba(245,158,11,0.1)">📻</div>
+        <div class="topic-name">AM, FM, PM Modulation</div>
+        <div class="topic-marks">Very High Priority</div>
+        <div class="topic-chevron">▼</div>
+      </div>
+      <div class="topic-body">
+        <h4>Simple Explanation</h4>
+        <p>Modulation = mixing a low-frequency message signal with a high-frequency carrier to transmit over long distances. Think of it as putting a letter (message) inside an envelope (carrier) to mail it.</p>
+        <h4>Three Types</h4>
+        <ul>
+          <li><strong>AM (Amplitude Modulation)</strong> — Carrier amplitude changes. Simple, but noisy. Used in medium wave radio.</li>
+          <li><strong>FM (Frequency Modulation)</strong> — Carrier frequency changes. Better quality, less noise. Used in FM radio (88–108 MHz).</li>
+          <li><strong>PM (Phase Modulation)</strong> — Carrier phase changes. Used in digital data. Related to FM mathematically.</li>
+        </ul>
+        <h4>Key Formulas</h4>
+        <div class="formula-box">AM: ma = (Amax−Amin)/(Amax+Amin) [modulation index, 0 to 1]<br>AM bandwidth: BW = 2fm<br>FM: mf = Δf/fm [deviation ratio]<br>FM bandwidth (Carson's Rule): BW ≈ 2(Δf + fm)<br>AM power: Pt = Pc(1 + ma²/2)</div>
+        <div class="mcq-tip"><strong>MCQ Approach:</strong> "Noise immunity" → FM wins. "Power efficiency" → SSB wins. "Simplest receiver" → AM. Bandwidth questions: AM = 2×signal freq; FM = use Carson's rule. Always calculate step by step.</div>
+      </div>
+    </div>
+
+    <div class="topic-card">
+      <div class="topic-header" onclick="toggleTopic(this)">
+        <div class="topic-icon" style="background:rgba(59,130,246,0.1)">📶</div>
+        <div class="topic-name">Mobile Communication (GSM, CDMA)</div>
+        <div class="topic-marks">High Priority</div>
+        <div class="topic-chevron">▼</div>
+      </div>
+      <div class="topic-body">
+        <h4>Simple Explanation</h4>
+        <p>Cellular networks divide geography into "cells." Each cell has a base station. When you move, your call "hands off" to the next cell. GSM uses TDMA (time slots). CDMA uses code division — everyone talks simultaneously but with different codes.</p>
+        <h4>Key Concepts</h4>
+        <ul>
+          <li><strong>GSM frequency</strong>: 900 MHz / 1800 MHz bands</li>
+          <li><strong>CDMA advantage</strong>: Better capacity, soft handoff</li>
+          <li><strong>3G → 4G LTE → 5G</strong>: Each generation increases data speed</li>
+          <li><strong>OFDM</strong>: Multi-carrier technique used in 4G/5G</li>
+          <li><strong>Handoff/Handover</strong>: Moving between base stations</li>
+        </ul>
+        <div class="mcq-tip"><strong>MCQ Approach:</strong> GSM = TDMA. CDMA = Code Division. 4G = LTE = OFDM. 5G = millimeter wave + massive MIMO. These associations are tested directly.</div>
+      </div>
+    </div>
+
+    <div class="topic-card">
+      <div class="topic-header" onclick="toggleTopic(this)">
+        <div class="topic-icon" style="background:rgba(16,185,129,0.1)">🌐</div>
+        <div class="topic-name">Fibre Optics & Satellite Communication</div>
+        <div class="topic-marks">Medium Priority</div>
+        <div class="topic-chevron">▼</div>
+      </div>
+      <div class="topic-body">
+        <h4>Simple Explanation</h4>
+        <p>Fibre optics transmit data as light through glass/plastic fibres using Total Internal Reflection (TIR). Much faster than copper wires. Satellites orbit Earth and relay signals — used for TV, GPS, weather forecasting.</p>
+        <h4>Fibre Optic Key Points</h4>
+        <ul>
+          <li><strong>Total Internal Reflection</strong>: Light bounces inside fibre when angle > critical angle</li>
+          <li><strong>Single mode</strong>: One path, less dispersion, long distance</li>
+          <li><strong>Multi mode</strong>: Many paths, shorter distance</li>
+          <li><strong>Attenuation</strong>: Signal loss per km (dB/km)</li>
+        </ul>
+        <h4>Satellite Orbits</h4>
+        <ul>
+          <li><strong>GEO</strong>: 36,000 km, geostationary (TV broadcast)</li>
+          <li><strong>LEO</strong>: 200–1200 km, low delay (Starlink)</li>
+          <li><strong>MEO</strong>: 1200–35,000 km (GPS)</li>
+        </ul>
+        <div class="formula-box">Critical angle: θc = sin⁻¹(n2/n1)<br>Numerical Aperture: NA = √(n1²−n2²)</div>
+        <div class="mcq-tip"><strong>MCQ Approach:</strong> TIR is why fibre optics work. Single mode = longer distance. GEO satellite = 36,000 km = no movement. GPS uses MEO orbit.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- DIGITAL TAB -->
+  <div id="digital" class="tab-content">
+
+    <div class="topic-card">
+      <div class="topic-header" onclick="toggleTopic(this)">
+        <div class="topic-icon" style="background:rgba(245,158,11,0.1)">🔢</div>
+        <div class="topic-name">Number Systems & Logic Gates</div>
+        <div class="topic-marks">Very High Priority</div>
+        <div class="topic-chevron">▼</div>
+      </div>
+      <div class="topic-body">
+        <h4>Number Systems</h4>
+        <ul>
+          <li><strong>Binary (Base 2)</strong>: Only 0 and 1 — computers use this</li>
+          <li><strong>Octal (Base 8)</strong>: Digits 0–7</li>
+          <li><strong>Hexadecimal (Base 16)</strong>: 0–9 and A–F</li>
+        </ul>
+        <div class="formula-box">Decimal → Binary: Divide by 2, write remainders bottom-up<br>Binary → Hex: Group 4 bits at a time<br>1s Complement: Flip all bits<br>2s Complement: Flip all bits + add 1 (used for subtraction)</div>
+        <h4>Logic Gates — Truth Tables</h4>
+        <ul>
+          <li><strong>AND</strong>: Output 1 only if ALL inputs are 1</li>
+          <li><strong>OR</strong>: Output 1 if ANY input is 1</li>
+          <li><strong>NOT</strong>: Inverts the input</li>
+          <li><strong>NAND</strong>: AND + NOT. Universal gate — can make any other gate</li>
+          <li><strong>NOR</strong>: OR + NOT. Also universal gate</li>
+          <li><strong>XOR</strong>: Output 1 if inputs are DIFFERENT</li>
+        </ul>
+        <div class="mcq-tip"><strong>MCQ Approach:</strong> "Universal gate" = NAND or NOR. XOR = parity checker. If all inputs same → XOR output is 0. De Morgan's theorem: NOT(A·B) = NOT A + NOT B</div>
+      </div>
+    </div>
+
+    <div class="topic-card">
+      <div class="topic-header" onclick="toggleTopic(this)">
+        <div class="topic-icon" style="background:rgba(59,130,246,0.1)">🔄</div>
+        <div class="topic-name">Flip-Flops, Counters & Registers</div>
+        <div class="topic-marks">High Priority</div>
+        <div class="topic-chevron">▼</div>
+      </div>
+      <div class="topic-body">
+        <h4>Simple Explanation</h4>
+        <p>A flip-flop is a memory cell — it stores 1 bit (0 or 1). They're triggered by a clock signal. Chain flip-flops together → Counter or Register.</p>
+        <h4>Types of Flip-Flops</h4>
+        <ul>
+          <li><strong>SR Flip-Flop</strong>: Set-Reset. Forbidden state: S=R=1</li>
+          <li><strong>JK Flip-Flop</strong>: Fixes SR forbidden state. J=K=1 → Toggle</li>
+          <li><strong>D Flip-Flop</strong>: Data/Delay. Q follows D on clock edge. Most used.</li>
+          <li><strong>T Flip-Flop</strong>: Toggle. Used in counters.</li>
+        </ul>
+        <div class="formula-box">n-bit counter: counts from 0 to 2ⁿ−1<br>Modulo-N counter: resets after count N<br>3 flip-flops → 3-bit counter → counts 0 to 7</div>
+        <div class="mcq-tip"><strong>MCQ Approach:</strong> "Forbidden state" → SR flip-flop. "Toggle" → T or JK (J=K=1). "Most widely used" → D flip-flop. Count states = 2ⁿ where n = number of flip-flops.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- COMPUTER TAB -->
+  <div id="comp" class="tab-content">
+
+    <div class="topic-card">
+      <div class="topic-header" onclick="toggleTopic(this)">
+        <div class="topic-icon" style="background:rgba(139,92,246,0.1)">🖥️</div>
+        <div class="topic-name">8085 Microprocessor</div>
+        <div class="topic-marks">High Priority</div>
+        <div class="topic-chevron">▼</div>
+      </div>
+      <div class="topic-body">
+        <h4>Simple Explanation</h4>
+        <p>The 8085 is an 8-bit microprocessor by Intel (1977). It processes 8 bits at a time. It has registers, an ALU (Arithmetic Logic Unit), and control unit. It follows the fetch-decode-execute cycle.</p>
+        <h4>Key Facts</h4>
+        <ul>
+          <li>8-bit data bus, 16-bit address bus → can address 2¹⁶ = 64KB memory</li>
+          <li>Clock speed: up to 3 MHz</li>
+          <li>Registers: A (accumulator), B, C, D, E, H, L, SP, PC</li>
+          <li>Flag register: S, Z, AC, P, CY</li>
+        </ul>
+        <h4>Common Instructions</h4>
+        <ul>
+          <li><strong>MOV A, B</strong> — Move B to A</li>
+          <li><strong>ADD B</strong> — Add B to accumulator</li>
+          <li><strong>MVI A, 05H</strong> — Load immediate value into A</li>
+          <li><strong>JMP address</strong> — Jump to address</li>
+          <li><strong>CALL / RET</strong> — Subroutine call and return</li>
+        </ul>
+        <div class="mcq-tip"><strong>MCQ Approach:</strong> 8085 = 8-bit. 64KB address space. Accumulator = A register (most operations happen here). Flags: Zero flag (Z) set when result is 0. Carry flag (CY) set on overflow.</div>
+      </div>
+    </div>
+
+    <div class="topic-card">
+      <div class="topic-header" onclick="toggleTopic(this)">
+        <div class="topic-icon" style="background:rgba(16,185,129,0.1)">🌐</div>
+        <div class="topic-name">Computer Networks & TCP/IP</div>
+        <div class="topic-marks">High Priority</div>
+        <div class="topic-chevron">▼</div>
+      </div>
+      <div class="topic-body">
+        <h4>OSI Model (7 Layers) — Must Memorize!</h4>
+        <p style="margin-bottom:8px">Mnemonic: <strong style="color:var(--accent)">"Please Do Not Throw Sausage Pizza Away"</strong></p>
+        <ul>
+          <li>7 — Application (HTTP, FTP, SMTP)</li>
+          <li>6 — Presentation (Encryption, Compression)</li>
+          <li>5 — Session (Start/Stop connections)</li>
+          <li>4 — Transport (TCP/UDP, port numbers)</li>
+          <li>3 — Network (IP routing)</li>
+          <li>2 — Data Link (MAC address, frames)</li>
+          <li>1 — Physical (Cables, signals)</li>
+        </ul>
+        <h4>TCP vs UDP</h4>
+        <ul>
+          <li><strong>TCP</strong>: Reliable, connection-oriented, slower. Used for web, email.</li>
+          <li><strong>UDP</strong>: Fast, connectionless, no guarantee. Used for video call, gaming.</li>
+        </ul>
+        <div class="formula-box">IP classes: A (0-127), B (128-191), C (192-223)<br>Private IP: 192.168.x.x, 10.x.x.x, 172.16-31.x.x<br>Subnet mask Class C: 255.255.255.0</div>
+        <div class="mcq-tip"><strong>MCQ Approach:</strong> OSI layer questions: "routing" = Network (Layer 3). "MAC address" = Data Link (Layer 2). "HTTP" = Application (Layer 7). TCP = reliable. UDP = fast. Memorize these instantly.</div>
+      </div>
+    </div>
+
+    <div class="topic-card">
+      <div class="topic-header" onclick="toggleTopic(this)">
+        <div class="topic-icon" style="background:rgba(239,68,68,0.1)">🔒</div>
+        <div class="topic-name">Network Security</div>
+        <div class="topic-marks">Medium Priority</div>
+        <div class="topic-chevron">▼</div>
+      </div>
+      <div class="topic-body">
+        <h4>Key Concepts</h4>
+        <ul>
+          <li><strong>Symmetric Encryption</strong>: Same key for encrypt + decrypt. Fast. Examples: AES, DES.</li>
+          <li><strong>Asymmetric Encryption</strong>: Public key encrypts, Private key decrypts. Slower but secure. RSA.</li>
+          <li><strong>Hashing</strong>: One-way function. MD5, SHA-256. Used for passwords.</li>
+          <li><strong>Digital Signature</strong>: Proves identity + data integrity.</li>
+          <li><strong>Firewall</strong>: Filters traffic based on rules.</li>
+          <li><strong>SSL/TLS</strong>: Secure web communication (HTTPS).</li>
+        </ul>
+        <div class="mcq-tip"><strong>MCQ Approach:</strong> AES/DES = Symmetric. RSA = Asymmetric. "One-way" = Hashing. "Same key both sides" = Symmetric. "Public/private key pair" = Asymmetric/PKI.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- PART A TAB -->
+  <div id="parta" class="tab-content">
+    <div class="card">
+      <div class="card-title">📜 Constitution of India (15 Marks)</div>
+      <p style="font-size:14px;color:#94a3b8;margin-bottom:12px">Focus areas: Preamble, Fundamental Rights (Part III), Directive Principles (Part IV), Emergency Provisions, Amendment Procedure, Schedules.</p>
+      <ul style="font-size:14px;color:#94a3b8;padding-left:18px">
+        <li>Articles 12–35: Fundamental Rights</li>
+        <li>Article 356: President's Rule</li>
+        <li>Article 368: Amendment</li>
+        <li>Article 370: J&K (abrogated 2019)</li>
+        <li>Schedules 1–12 (especially 8th — languages)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">🌍 Current Affairs & General Knowledge (15 Marks)</div>
+      <p style="font-size:14px;color:#94a3b8">Read one quality newspaper or GK app (InShorts, GK Today) for 10 minutes daily during breakfast or lunch break. Focus: Gujarat state news, National awards, Science/Tech developments, Sports.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🧩 Reasoning & Data Interpretation (25 Marks)</div>
+      <p style="font-size:14px;color:#94a3b8">Topics: Series, Coding-Decoding, Blood Relations, Syllogisms, Direction sense, Data interpretation (tables, charts). Practice 10 questions daily — these are pure pattern recognition.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">📐 Quantitative Aptitude (25 Marks)</div>
+      <p style="font-size:14px;color:#94a3b8">Topics: Percentage, Ratio, Time-Work, Speed-Distance, Simple/Compound Interest, Profit-Loss, Number system. See the Math Tricks section for shortcuts!</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- ===================== SECTION: TRICKS ===================== -->
+<div id="tricks" class="section" style="display:none">
+  <div class="section-title">Section 03</div>
+  <h2 class="section-h2">Math & Reasoning Shortcuts ⚡</h2>
+
+  <div class="trick-card">
+    <div class="trick-title">⏱️ Time & Work <span class="trick-badge">Formula Trick</span></div>
+    <p style="font-size:14px;color:#94a3b8;margin-bottom:8px">If A can do a job in <em>a</em> days and B in <em>b</em> days, together they finish in:</p>
+    <div class="formula-box">Together = (a × b) / (a + b) days</div>
+    <p style="font-size:13px;color:#94a3b8;margin-top:8px">If 3 people: 1/Total = 1/A + 1/B + 1/C</p>
+    <div class="example-box">
+      <div class="q">Q: A finishes in 10 days, B in 15 days. Together?</div>
+      <div class="a">✅ (10×15)/(10+15) = 150/25 = 6 days</div>
+    </div>
+  </div>
+
+  <div class="trick-card">
+    <div class="trick-title">🚗 Speed, Time & Distance <span class="trick-badge">Triangle Method</span></div>
+    <div class="formula-box">Speed = Distance / Time<br>Distance = Speed × Time<br>Time = Distance / Speed</div>
+    <p style="font-size:13px;color:#94a3b8;margin:8px 0">Unit conversion: 1 km/h = 5/18 m/s | 1 m/s = 18/5 km/h</p>
+    <p style="font-size:13px;color:#94a3b8"><strong style="color:var(--text)">Average Speed Trick:</strong> If same distance at speed S1 and S2:</p>
+    <div class="formula-box">Average speed = 2S1×S2 / (S1+S2) ← NOT (S1+S2)/2 !</div>
+    <div class="example-box">
+      <div class="q">Q: Travels 60km at 40 km/h, returns at 60 km/h. Average speed?</div>
+      <div class="a">✅ 2×40×60 / (40+60) = 4800/100 = 48 km/h</div>
+    </div>
+  </div>
+
+  <div class="trick-card">
+    <div class="trick-title">📊 Percentage <span class="trick-badge">Multiplier Trick</span></div>
+    <p style="font-size:13px;color:#94a3b8;margin-bottom:8px">Instead of calculating %, use multipliers:</p>
+    <div class="formula-box">+20% = ×1.2 | −20% = ×0.8<br>+50% = ×1.5 | −50% = ×0.5<br>+10% then −10% = ×1.1×0.9 = ×0.99 = net −1%</div>
+    <p style="font-size:13px;color:#94a3b8;margin:8px 0"><strong style="color:var(--text)">Successive Discount Trick:</strong></p>
+    <div class="formula-box">Two discounts x% and y%: Net = x + y − xy/100</div>
+    <div class="example-box">
+      <div class="q">Q: 20% and 30% successive discount. Net discount?</div>
+      <div class="a">✅ 20 + 30 − (20×30)/100 = 50 − 6 = 44%</div>
+    </div>
+  </div>
+
+  <div class="trick-card">
+    <div class="trick-title">⚖️ Ratio & Proportion <span class="trick-badge">Quick Method</span></div>
+    <div class="formula-box">If a:b = m:n, then a = mk, b = nk for some k<br>Total = a+b = (m+n)k</div>
+    <div class="example-box">
+      <div class="q">Q: Ratio of A:B = 3:5. Total = 80. Find A and B.</div>
+      <div class="a">✅ Total parts = 3+5 = 8. Each part = 80/8 = 10.<br>A = 3×10 = 30, B = 5×10 = 50</div>
+    </div>
+  </div>
+
+  <div class="trick-card">
+    <div class="trick-title">💰 Simple vs Compound Interest <span class="trick-badge">Formula</span></div>
+    <div class="formula-box">SI = P × R × T / 100<br>CI = P × (1 + R/100)^T − P<br>CI−SI (2 years) = P × (R/100)²</div>
+    <div class="example-box">
+      <div class="q">Q: P=1000, R=10%, T=2 years. Find CI−SI.</div>
+      <div class="a">✅ CI−SI = 1000 × (0.1)² = 1000 × 0.01 = ₹10</div>
+    </div>
+  </div>
+
+  <div class="trick-card">
+    <div class="trick-title">🧩 Reasoning Patterns <span class="trick-badge">Pattern Recognition</span></div>
+    <p style="font-size:14px;color:#94a3b8;margin-bottom:10px">Common patterns to memorize:</p>
+    <ul style="font-size:13px;color:#94a3b8;padding-left:18px">
+      <li><strong style="color:var(--text)">Number Series</strong>: Look for +/− constant, ×/÷, squares, alternating patterns</li>
+      <li><strong style="color:var(--text)">Coding-Decoding</strong>: Check if letters shift by fixed number (A→D = +3)</li>
+      <li><strong style="color:var(--text)">Direction</strong>: Draw the path. Final = straight-line distance. Use Pythagoras.</li>
+      <li><strong style="color:var(--text)">Blood Relations</strong>: Make a family tree diagram</li>
+      <li><strong style="color:var(--text)">Syllogism</strong>: Use Venn diagrams. "All A are B" = A circle inside B circle.</li>
+    </ul>
+    <div class="example-box">
+      <div class="q">Series: 2, 6, 12, 20, 30, ?</div>
+      <div class="a">✅ Differences: 4, 6, 8, 10, 12 → Next = 30+12 = 42</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== SECTION: RESOURCES ===================== -->
+<div id="resources" class="section" style="display:none">
+  <div class="section-title">Section 04</div>
+  <h2 class="section-h2">Best Study Resources 🔗</h2>
+
+  <div class="card-title" style="font-family:'Syne',sans-serif;font-size:18px;font-weight:700;margin-bottom:16px">📺 YouTube Channels</div>
+
+  <div class="resource-item">
+    <div class="resource-icon" style="background:rgba(239,68,68,0.1)">▶️</div>
+    <div class="resource-info">
+      <div class="name">Neso Academy</div>
+      <div class="desc">Electronics, Digital, Networks — Extremely beginner-friendly with clear animations</div>
+    </div>
+    <div class="resource-tag" style="background:rgba(245,158,11,0.1);color:var(--accent)">⭐ TOP PICK</div>
+  </div>
+
+  <div class="resource-item">
+    <div class="resource-icon" style="background:rgba(239,68,68,0.1)">▶️</div>
+    <div class="resource-info">
+      <div class="name">Gate Smashers</div>
+      <div class="desc">Digital Electronics, Computer Networks, OS — Clear MCQ-focused explanations</div>
+    </div>
+    <div class="resource-tag" style="background:rgba(59,130,246,0.1);color:var(--accent2)">MCQ FOCUS</div>
+  </div>
+
+  <div class="resource-item">
+    <div class="resource-icon" style="background:rgba(239,68,68,0.1)">▶️</div>
+    <div class="resource-info">
+      <div class="name">Electronics For You (EFY)</div>
+      <div class="desc">Real-world electronics concepts, circuit explanations, practical approach</div>
+    </div>
+    <div class="resource-tag" style="background:rgba(16,185,129,0.1);color:var(--accent3)">PRACTICAL</div>
+  </div>
+
+  <div class="resource-item">
+    <div class="resource-icon" style="background:rgba(239,68,68,0.1)">▶️</div>
+    <div class="resource-info">
+      <div class="name">Unacademy / BYJU'S Exam Prep</div>
+      <div class="desc">Gujarat PSI & Police exam specific content, reasoning shortcuts, mock tests</div>
+    </div>
+    <div class="resource-tag" style="background:rgba(245,158,11,0.1);color:var(--accent)">EXAM SPECIFIC</div>
+  </div>
+
+  <div class="resource-item">
+    <div class="resource-icon" style="background:rgba(239,68,68,0.1)">▶️</div>
+    <div class="resource-info">
+      <div class="name">Wifistudy (Maths & Reasoning)</div>
+      <div class="desc">Quantitative aptitude tricks, reasoning shortcuts in Hindi/Gujarati</div>
+    </div>
+    <div class="resource-tag" style="background:rgba(139,92,246,0.1);color:#c4b5fd)">APTITUDE</div>
+  </div>
+
+  <div class="card-title" style="font-family:'Syne',sans-serif;font-size:18px;font-weight:700;margin:24px 0 16px">🌐 Websites & Apps</div>
+
+  <div class="resource-item">
+    <div class="resource-icon" style="background:rgba(59,130,246,0.1)">🌐</div>
+    <div class="resource-info">
+      <div class="name">GeeksForGeeks.org</div>
+      <div class="desc">Computer Networks, Digital Electronics, Data Structures — clear articles + examples</div>
+    </div>
+    <div class="resource-tag" style="background:rgba(16,185,129,0.1);color:var(--accent3)">FREE</div>
+  </div>
+
+  <div class="resource-item">
+    <div class="resource-icon" style="background:rgba(59,130,246,0.1)">🌐</div>
+    <div class="resource-info">
+      <div class="name">Tutorialspoint.com</div>
+      <div class="desc">Microprocessors, Web Tech, Android — very beginner-friendly with examples</div>
+    </div>
+    <div class="resource-tag" style="background:rgba(16,185,129,0.1);color:var(--accent3)">FREE</div>
+  </div>
+
+  <div class="resource-item">
+    <div class="resource-icon" style="background:rgba(59,130,246,0.1)">📱</div>
+    <div class="resource-info">
+      <div class="name">Testbook App</div>
+      <div class="desc">Gujarat PSI mock tests, previous year papers, live quizzes — excellent for MCQ practice</div>
+    </div>
+    <div class="resource-tag" style="background:rgba(245,158,11,0.1);color:var(--accent)">MOCK TESTS</div>
+  </div>
+
+  <div class="resource-item">
+    <div class="resource-icon" style="background:rgba(59,130,246,0.1)">📱</div>
+    <div class="resource-info">
+      <div class="name">GKToday + InShorts</div>
+      <div class="desc">Daily current affairs, GK updates, Constitution notes — 5 min daily habit</div>
+    </div>
+    <div class="resource-tag" style="background:rgba(239,68,68,0.1);color:#fca5a5">CURRENT AFFAIRS</div>
+  </div>
+
+  <div class="resource-item">
+    <div class="resource-icon" style="background:rgba(59,130,246,0.1)">📚</div>
+    <div class="resource-info">
+      <div class="name">Arihant / RK Kanodia Electronics Books</div>
+      <div class="desc">MCQ bank for Electronics & Communication — get the one for competitive exams</div>
+    </div>
+    <div class="resource-tag" style="background:rgba(245,158,11,0.1);color:var(--accent)">BOOK</div>
+  </div>
+</div>
+
+<!-- ===================== SECTION: STRATEGY ===================== -->
+<div id="strategy" class="section" style="display:none">
+  <div class="section-title">Section 05</div>
+  <h2 class="section-h2">Exam Strategy & Smart Tips 🧠</h2>
+
+  <h3 style="font-family:'Syne',sans-serif;font-size:18px;font-weight:700;margin-bottom:20px">🎯 How to Prepare in Limited Time</h3>
+
+  <div class="tip-item">
+    <div class="tip-num">1</div>
+    <div class="tip-text"><strong>Focus on HIGH-YIELD topics first.</strong> Part B is 120 marks. Electronics (transistors, op-amps, modulation) + Digital (gates, flip-flops) + Networks = ~80% of Part B. Start there, not from topic 1 linearly.</div>
+  </div>
+  <div class="tip-item">
+    <div class="tip-num">2</div>
+    <div class="tip-text"><strong>Learn concepts, then immediately practice MCQs.</strong> Don't read 3 hours then practice. Learn for 45 min, solve 15–20 MCQs right away. This is called "interleaved practice" and it works 3× better.</div>
+  </div>
+  <div class="tip-item">
+    <div class="tip-num">3</div>
+    <div class="tip-text"><strong>Make a "formula/concept card" for each topic.</strong> A4 paper, key formulas only. By exam day you'll have ~15 sheets. Review them every weekend — this replaces re-reading 100 pages.</div>
+  </div>
+  <div class="tip-item">
+    <div class="tip-num">4</div>
+    <div class="tip-text"><strong>Use the "E" option strategically.</strong> The exam has -0.25 for wrong answers but 0 for "Not Attempted." If you're less than 60% sure, choose E. If you're 70%+ sure, attempt it. The math favors attempting when you can eliminate 1–2 options.</div>
+  </div>
+  <div class="tip-item">
+    <div class="tip-num">5</div>
+    <div class="tip-text"><strong>Phone screen time → Anki flashcards.</strong> Install Anki (free). Create flashcards for formulas. Spend 10 min on phone = 10 min revising. Same time, completely different outcome.</div>
+  </div>
+
+  <h3 style="font-family:'Syne',sans-serif;font-size:18px;font-weight:700;margin:32px 0 20px">🎲 Smart MCQ Guessing Strategy</h3>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title" style="color:var(--accent3)">✅ When to Attempt</div>
+      <ul style="font-size:14px;color:#94a3b8;padding-left:18px">
+        <li>You can eliminate 2+ wrong options</li>
+        <li>You recognize the topic but unsure of exact answer</li>
+        <li>Two options seem similar — pick the more specific one</li>
+        <li>Your gut feeling after studying the topic</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title" style="color:var(--accent4)">❌ When to Use "E" (Skip)</div>
+      <ul style="font-size:14px;color:#94a3b8;padding-left:18px">
+        <li>You have no idea about the topic at all</li>
+        <li>All 4 options look equally plausible</li>
+        <li>Numerical calculation will take too long</li>
+        <li>Never seen this concept during preparation</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 style="font-family:'Syne',sans-serif;font-size:18px;font-weight:700;margin:32px 0 20px">⚠️ Common Mistakes to Avoid</h3>
+
+  <div class="tip-item">
+    <div class="tip-num" style="background:var(--accent4)">✗</div>
+    <div class="tip-text"><strong>Reading without practicing MCQs.</strong> Reading creates an illusion of understanding. Only MCQ practice reveals real gaps. After every 45-min study session: solve 15 questions.</div>
+  </div>
+  <div class="tip-item">
+    <div class="tip-num" style="background:var(--accent4)">✗</div>
+    <div class="tip-text"><strong>Ignoring Part A (80 marks = 40% of exam!).</strong> Part A is reasoning + aptitude + constitution. These are scoreable with just 2 weeks of focused practice. Don't skip it thinking "it's easy."</div>
+  </div>
+  <div class="tip-item">
+    <div class="tip-num" style="background:var(--accent4)">✗</div>
+    <div class="tip-text"><strong>Studying new topics in the last 3 days.</strong> New info before exam = confusion + panic. Last 3 days = only revision of what you already know.</div>
+  </div>
+  <div class="tip-item">
+    <div class="tip-num" style="background:var(--accent4)">✗</div>
+    <div class="tip-text"><strong>Trying to cover everything equally.</strong> You have 45 days and 11 topics. Prioritize: Electronics (30% time) → Communication (25%) → Digital (15%) → Computer (15%) → Part A (15%).</div>
+  </div>
+
+  <h3 style="font-family:'Syne',sans-serif;font-size:18px;font-weight:700;margin:32px 0 20px">🧠 Memory Techniques</h3>
+
+  <div class="grid-2">
+    <div class="trick-card">
+      <div class="trick-title">🔤 Acronyms</div>
+      <p style="font-size:13px;color:#94a3b8">OSI Layers: <strong style="color:var(--accent)">"Please Do Not Throw Sausage Pizza Away"</strong><br>Physical, Data Link, Network, Transport, Session, Presentation, Application</p>
+    </div>
+    <div class="trick-card">
+      <div class="trick-title">🎨 Visualization</div>
+      <p style="font-size:13px;color:#94a3b8">For transistor configs: imagine CE = Common person (most popular). CB = Common boss (high freq). CC = Common copycat (follows input).</p>
+    </div>
+    <div class="trick-card">
+      <div class="trick-title">📖 Story Method</div>
+      <p style="font-size:13px;color:#94a3b8">For modulation: AM = Amplitude SHOUTING louder (amplitude changes). FM = FASTER/SLOWER speech (frequency changes). PM = PHASE shifting like walking in step.</p>
+    </div>
+    <div class="trick-card">
+      <div class="trick-title">🔄 Spaced Repetition</div>
+      <p style="font-size:13px;color:#94a3b8">Review a topic: Day 1 → Day 3 → Day 7 → Day 14. Each review takes half the time but doubles retention. Use Anki app to automate this.</p>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:32px;border-color:rgba(245,158,11,0.3);background:rgba(245,158,11,0.05)">
+    <div class="card-title" style="color:var(--accent)">🏁 Exam Day Checklist</div>
+    <ul style="font-size:14px;color:#94a3b8;padding-left:18px;margin-top:8px">
+      <li>Sleep 7–8 hours the night before. No all-nighters.</li>
+      <li>Light breakfast. No heavy food that causes drowsiness.</li>
+      <li>Arrive 30 min early. Scan the question paper in the first 5 minutes.</li>
+      <li>Start with topics you're most confident in — build momentum.</li>
+      <li>For Part A: attempt all reasoning/aptitude you've practiced.</li>
+      <li>For Part B: Electronics first (most prepared), then Digital, then Computer.</li>
+      <li>Use the "E" option for anything you haven't studied or completely blank on.</li>
+      <li>Don't waste more than 2 minutes on any single question.</li>
+      <li>Review in last 10 minutes. Double check any you weren't sure about.</li>
+    </ul>
+  </div>
+</div>
+
+<footer>
+  <p>Built for your <strong>Gujarat Wireless PSI</strong> preparation · Exam Date: <strong>June 7, 2025</strong></p>
+  <p style="margin-top:8px;font-size:11px">Study smart. Stay consistent. You've got this. 💪</p>
+</footer>
+
+<script>
+function showSection(id, btn) {
+  document.querySelectorAll('.section').forEach(s => s.style.display = 'none');
+  document.getElementById(id).style.display = 'block';
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+function showTab(id, btn) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+
+function toggleTopic(header) {
+  const body = header.nextElementSibling;
+  const chevron = header.querySelector('.topic-chevron');
+  const isOpen = body.classList.contains('open');
+  // Close all
+  document.querySelectorAll('.topic-body').forEach(b => b.classList.remove('open'));
+  document.querySelectorAll('.topic-chevron').forEach(c => c.style.transform = '');
+  // Open this one
+  if (!isOpen) {
+    body.classList.add('open');
+    chevron.style.transform = 'rotate(180deg)';
+  }
+}
+</script>
+</body>
+</html>
